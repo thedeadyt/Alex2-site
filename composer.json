@@ -1,0 +1,51 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "symfony/console": "^6.0",
+        "symfony/dotenv": "^6.0",
+        "symfony/flex": "^2",
+        "symfony/framework-bundle": "^6.0",
+        "symfony/runtime": "^6.0",
+        "symfony/twig-bundle": "^6.0",
+        "symfony/webpack-encore-bundle": "^1.15",
+        "symfony/yaml": "^7.3"
+    },
+    "require-dev": {
+        "symfony/debug-bundle": "^6.0",
+        "symfony/maker-bundle": "^1.0",
+        "symfony/stopwatch": "^7.3",
+        "symfony/web-profiler-bundle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    }
+}

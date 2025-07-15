@@ -1,0 +1,42 @@
+<header>
+    <nav id="main-nav" class="px-6 py-4 shadow" style="background-color: var(--color-white); color: var(--color-black);">
+        <div class="flex items-center justify-between mx-auto max-w-7xl">
+            <!-- Logo -->
+            <a href="{{ base_url }}/index.php" class="flex items-center space-x-2">
+                <img src="{{ base_url }}/asset/img/logo.png" alt="Logo" class="w-12 h-12" />
+                <span class="font-bold text-l" style="color: var(--color-black); font-family: var(--font-heading);">&lt;Alex²/&gt;</span>
+            </a>
+
+            <!-- Burger Button for React -->
+            <div class="md:hidden" id="react-menu-toggle">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <!-- React remplacera l’icône ici -->
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+
+            <!-- Nav desktop -->
+            <div id="nav-desktop" class="relative hidden space-x-6 md:flex"
+                 data-current-page="{{ current_page }}">
+                {% for item in nav_items %}
+                    <a href="{{ base_url ~ item.href }}"
+                       class="px-1 font-medium transition-colors duration-300 nav-button"
+                       data-page="{{ item.file }}"
+                       style="font-family: var(--font-base); color: var(--color-black);">
+                        {{ item.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Nav mobile pour React -->
+        <div id="nav-mobile" class="hidden mt-4 space-y-2 md:hidden">
+            {% for item in nav_items %}
+                <a href="{{ base_url ~ item.href }}" class="block px-4 py-2 bg-white rounded shadow"
+                   style="color: var(--color-black); font-family: var(--font-base);">
+                    {{ item.name }}
+                </a>
+            {% endfor %}
+        </div>
+    </nav>
+</header>

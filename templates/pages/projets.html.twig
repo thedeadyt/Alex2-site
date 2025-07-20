@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}Accueil | &lt;alex²/&gt;{% endblock %}</title>
+    <title>{% block title %}Projets | &lt;alex²/&gt;{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('asset/css/variables.css') }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
     {% include 'partials/header.twig' %}
-    <h1>coucou</h1>
-    <section id="content">
+    <h1>projets</h1>
+        <section id="content">
         {% block content %}{% endblock %}
     </section>
     {% include 'partials/footer.twig' %}
